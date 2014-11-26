@@ -7,7 +7,7 @@ BASE SYSTEM
 The following documentation ist based on a fresh Raspberry PI based on
 Raspbian 2014-06-20-wheezy-raspbian. 
 
-GCC and git are preinstalled, so nothing do do here.
+GCC and git are preinstalled, so nothing to do here.
 
 PREREQUISITES
 --------------------------------------------------------------------------
@@ -49,6 +49,6 @@ make install
 To enable the regular update of the graphics for the web, add the following to your
 /etc/contrab:
 
-*/5 *   * * *   root    /home/pi/humifand/graph.sh >/dev/null
+*/5 *   * * *   root    /usr/sbin/humifand_graph.sh >/dev/null
 
 

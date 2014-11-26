@@ -27,7 +27,7 @@
 		CDCC918019CF6368006132DF /* ProcessValues.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProcessValues.cpp; sourceTree = "<group>"; };
 		CDCC918119CF6368006132DF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CDCC918219CF6368006132DF /* RPi_SHT1x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RPi_SHT1x.cpp; sourceTree = "<group>"; };
-		CDCC918319CF6368006132DF /* graph.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = graph.sh; sourceTree = "<group>"; };
+		CDCC918319CF6368006132DF /* humifand_graph.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = humifand_graph.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -53,7 +53,7 @@
 				CDCC918019CF6368006132DF /* ProcessValues.cpp */,
 				CDCC918119CF6368006132DF /* main.cpp */,
 				CDCC918219CF6368006132DF /* RPi_SHT1x.cpp */,
-				CDCC918319CF6368006132DF /* graph.sh */,
+				CDCC918319CF6368006132DF /* humifand_graph.sh */,
 			);
 			sourceTree = "<group>";
 		};
