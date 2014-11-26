@@ -34,5 +34,4 @@ install: humifand
 	sudo cp -u humifand.sh /etc/init.d/humifand
 	sudo chmod a+rx /etc/init.d/humifand	
 	sudo cp -u humifand /usr/sbin/.
-	
-		
+	sudo update-rc.d humifand defaults

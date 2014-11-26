@@ -1,5 +1,15 @@
 #! /bin/sh
 
+### BEGIN INIT INFO
+# Provides:          Automatic Fan Control
+# Required-Start:    apache2,cron
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Humidity dependend fan control
+# Description:       RTFM please
+### END INIT INFO
+
 # Author: Tim Hagemann tim@way2.net
 #		  humifand startup script
 
@@ -7,10 +17,10 @@
 
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-DESC="himufand service"
+DESC="humifand service"
 NAME=humifand
 DAEMON=/usr/sbin/$NAME
-DAEMON_ARGS="--options args"
+DAEMON_ARGS="-- -v -d"
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
 
@@ -39,7 +49,7 @@ do_start()
 	#   2 if daemon could not be started
 	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON --test > /dev/null \
 		|| return 1
-	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON -- \
+	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON \
 		$DAEMON_ARGS \
 		|| return 2
 	# Add code here, if necessary, that waits for the process to be ready

@@ -220,11 +220,12 @@ bool IsFanAllowed(float f_it,float f_ih, float f_ot, float f_oh)
 	
 	if (CONF->isValid("max_daily_fan_runtime"))
 	{
-		LOGGER->Log("-------------------------------- (%f) : (%f)",l_max_daily_fan_runtime,FAN->GetRuntime());
+		if (CONF->coGetVerbose()) LOGGER->Log("Max daily runtime: %f Current daily runtime: %f",l_max_daily_fan_runtime,FAN->GetRuntime());
 			
 		if (FAN->GetRuntime() > l_max_daily_fan_runtime)
 		{
-			if (CONF->coGetVerbose()) LOGGER->Log("Fan not allowed as max runtime (%f) : (%f)",l_max_daily_fan_runtime,FAN->GetRuntime());
+			if (CONF->coGetVerbose()) LOGGER->Log("Fan not allowed as max runtime (%f) reached: %f",l_max_daily_fan_runtime,FAN->GetRuntime());
+            
 			return false;
 		}
 	}
