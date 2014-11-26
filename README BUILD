@@ -1,0 +1,54 @@
+--------------------------------------------------------------------------
+HOW TO BUILD humifand
+--------------------------------------------------------------------------
+
+BASE SYSTEM
+--------------------------------------------------------------------------
+The following documentation ist based on a fresh Raspberry PI based on
+Raspbian 2014-06-20-wheezy-raspbian. 
+
+GCC and git are preinstalled, so nothing do do here.
+
+PREREQUISITES
+--------------------------------------------------------------------------
+
+We need to install the rrdtool and it development environment first
+
+sudo apt-get install rrdtool
+sudo apt-get install librrd-dev
+sudo apt-get install apache2
+
+The last one will take a while as many dependencies are fetched.
+
+GPIO Lib
+--------------------------------------------------------------------------
+
+Use the provided bcm2835-1.37 lib for accessing the gpio ports. It has not
+been changed but was difficult to find as the links are not updated on the 
+web site.
+
+http://www.airspayce.com/mikem/bcm2835/
+
+# download the latest version of the library, say bcm2835-1.xx.tar.gz, then:
+*  tar zxvf bcm2835-1.xx.tar.gz
+*  cd bcm2835-1.xx
+*  ./configure
+*  make
+*  sudo make check
+*  sudo make install
+
+humifand itself
+--------------------------------------------------------------------------
+
+To build and install the daemon please use:
+
+make clean
+make
+make install
+
+To enable the regular update of the graphics for the web, add the following to your
+/etc/contrab:
+
+*/5 *   * * *   root    /home/pi/humifand/graph.sh >/dev/null
+
+

@@ -6,11 +6,64 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		CDCC916E19CF6368006132DF /* logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logger.h; sourceTree = "<group>"; };
+		CDCC916F19CF6368006132DF /* logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = logger.cpp; sourceTree = "<group>"; };
+		CDCC917019CF6368006132DF /* ProcessValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessValues.h; sourceTree = "<group>"; };
+		CDCC917119CF6368006132DF /* RPi_SHT1x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPi_SHT1x.h; sourceTree = "<group>"; };
+		CDCC917219CF6368006132DF /* c.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = c.sh; sourceTree = "<group>"; };
+		CDCC917319CF6368006132DF /* t.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = t.sh; sourceTree = "<group>"; };
+		CDCC917419CF6368006132DF /* README BUILD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "README BUILD"; sourceTree = "<group>"; };
+		CDCC917519CF6368006132DF /* conffile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = conffile.h; sourceTree = "<group>"; };
+		CDCC917719CF6368006132DF /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		CDCC917819CF6368006132DF /* xxxxxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xxxxxx; sourceTree = "<group>"; };
+		CDCC917919CF6368006132DF /* create.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = create.sh; sourceTree = "<group>"; };
+		CDCC917A19CF6368006132DF /* fan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fan.h; sourceTree = "<group>"; };
+		CDCC917B19CF6368006132DF /* fan.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fan.cpp; sourceTree = "<group>"; };
+		CDCC917C19CF6368006132DF /* conffile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = conffile.cpp; sourceTree = "<group>"; };
+		CDCC917D19CF6368006132DF /* humifand.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = humifand.conf; sourceTree = "<group>"; };
+		CDCC917E19CF6368006132DF /* humifand.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = humifand.sh; sourceTree = "<group>"; };
+		CDCC917F19CF6368006132DF /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		CDCC918019CF6368006132DF /* ProcessValues.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProcessValues.cpp; sourceTree = "<group>"; };
+		CDCC918119CF6368006132DF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CDCC918219CF6368006132DF /* RPi_SHT1x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RPi_SHT1x.cpp; sourceTree = "<group>"; };
+		CDCC918319CF6368006132DF /* graph.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = graph.sh; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		CDCC916119CF6215006132DF = {
 			isa = PBXGroup;
 			children = (
+				CDCC916E19CF6368006132DF /* logger.h */,
+				CDCC916F19CF6368006132DF /* logger.cpp */,
+				CDCC917019CF6368006132DF /* ProcessValues.h */,
+				CDCC917119CF6368006132DF /* RPi_SHT1x.h */,
+				CDCC917219CF6368006132DF /* c.sh */,
+				CDCC917319CF6368006132DF /* t.sh */,
+				CDCC917419CF6368006132DF /* README BUILD */,
+				CDCC917519CF6368006132DF /* conffile.h */,
+				CDCC917619CF6368006132DF /* www */,
+				CDCC917919CF6368006132DF /* create.sh */,
+				CDCC917A19CF6368006132DF /* fan.h */,
+				CDCC917B19CF6368006132DF /* fan.cpp */,
+				CDCC917C19CF6368006132DF /* conffile.cpp */,
+				CDCC917D19CF6368006132DF /* humifand.conf */,
+				CDCC917E19CF6368006132DF /* humifand.sh */,
+				CDCC917F19CF6368006132DF /* makefile */,
+				CDCC918019CF6368006132DF /* ProcessValues.cpp */,
+				CDCC918119CF6368006132DF /* main.cpp */,
+				CDCC918219CF6368006132DF /* RPi_SHT1x.cpp */,
+				CDCC918319CF6368006132DF /* graph.sh */,
 			);
+			sourceTree = "<group>";
+		};
+		CDCC917619CF6368006132DF /* www */ = {
+			isa = PBXGroup;
+			children = (
+				CDCC917719CF6368006132DF /* index.html */,
+				CDCC917819CF6368006132DF /* xxxxxx */,
+			);
+			path = www;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -18,15 +71,16 @@
 /* Begin PBXLegacyTarget section */
 		CDCC916619CF6215006132DF /* humifand */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
+			buildArgumentsString = "";
 			buildConfigurationList = CDCC916919CF6215006132DF /* Build configuration list for PBXLegacyTarget "humifand" */;
 			buildPhases = (
 			);
-			buildToolPath = /usr/bin/make;
+			buildToolPath = ../humifand/c.sh;
+			buildWorkingDirectory = /Users/thagemann/Documents/Dev/humifand;
 			dependencies = (
 			);
 			name = humifand;
-			passBuildSettingsInEnvironment = 1;
+			passBuildSettingsInEnvironment = 0;
 			productName = humifand;
 		};
 /* End PBXLegacyTarget section */
@@ -174,6 +228,7 @@
 				CDCC916B19CF6215006132DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
