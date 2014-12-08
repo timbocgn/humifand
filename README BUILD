@@ -20,6 +20,21 @@ sudo apt-get install apache2
 
 The last one will take a while as many dependencies are fetched.
 
+If you want automatic emails:
+
+sudo apt-get install ssmtp
+sudo apt-get install mailutils
+sudo apt-get install sharutils
+
+Edit the /etc/ssmtp/ssmtp.conf and change user/pass and mailhost according to
+your accounts:
+
+AuthUser=youruserid@gmail.com
+AuthPass=userpass
+FromLineOverride=YES
+mailhub=smtp.gmail.com:587
+UseSTARTTLS=YES
+
 GPIO Lib
 --------------------------------------------------------------------------
 
@@ -46,9 +61,42 @@ make clean
 make
 make install
 
-To enable the regular update of the graphics for the web, add the following to your
-/etc/contrab:
+Using PI USV
+--------------------------------------------------------------------------
+
+It is recommend to use the so called PI USV, an add on module which gives you a
+secondary power source and shutdowns the raspi in case of a power failure. As your
+system is about to run forever (ideally), this is a good idea.
+
+You can get it here: http://www.piusv.de
+
+To use it, follow the instructions to install the respective piusvmonitor daemon and
+change the 'config.piusv' by replaing the values below:
+
+// Path to the script that is executed EVERY TIME PRI_POW changes from 0 to 1.
+PRI_POW=/usr/sbin/humifand_checkpiusv.sh PRI_POW
+
+// Path to the script that is executed EVERY TIME SEC_POW changes from 0 to 1.
+SEC_POW=/usr/sbin/humifand_checkpiusv.sh SEC_POW
+
+// Path to the script that is executed EVERY TIME BAT_LOW changes from 0 to 1.
+BAT_LOW=/usr/sbin/humifand_checkpiusv.sh BAT_LOW
+
+This will generate a mail when something happens.
+
+cron jobs
+--------------------------------------------------------------------------
+
+To enable the regular update of the graphics for the apache, add the following
+to your /etc/contrab:
 
 */5 *   * * *   root    /usr/sbin/humifand_graph.sh >/dev/null
 
+To enable a daily message with all graphs, add the following to your
+/etc/contrab:
 
+01 00    * * *   root    /usr/sbin/humifand_mailstat.sh >/dev/null
+
+Don't forget to restart cron:
+
+sudo /etc/init.d/cron restart

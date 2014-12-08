@@ -60,10 +60,20 @@ void CFan::InitPins(int f_Fan_pin_sck)
 
 double CFan::GetRuntime(void)
 {
-	if (m_FanSpinning) 
-		return CalcRuntime();
-	else
+	if (m_FanSpinning)
+    {
+        // --- calculate the runtime of this "run"
+        
+        double l_dt = difftime(time(0),m_LastStartTime);
+
+        // --- and return the total runtine
+        
+        return m_RunTime+l_dt;
+    }
+    else
+    {
 		return m_RunTime;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -92,16 +102,6 @@ void CFan::Start(void)
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
-double CFan::CalcRuntime(void)
-{
-	// --- calculate the runtime
-
-	time_t l_now = time(0);
-	return difftime(l_now,m_LastStartTime);
-}
-
-////////////////////////////////////////////////////////////////////////////////////////
-
 void CFan::Stop(void)
 {
 	// --- if already stopped - do nothing
@@ -113,11 +113,16 @@ void CFan::Stop(void)
 	// --- and switch it off
 	
 	bcm2835_gpio_write(m_Fan_pin_sck, LOW);
-		
-	double l_rt = CalcRuntime();
-	m_RunTime += l_rt;	
 
-	if (CONF->coGetVerbose()) LOGGER->Log("Fan was running for %f seconds, total runtime %f",l_rt,m_RunTime);
+    // --- set the total runtime to the old runtime + time of the current "run"
+    
+    double l_oldRT = m_RunTime;
+	
+    m_RunTime = GetRuntime();
+    
+    double l_thisRT = m_RunTime-l_oldRT;
+
+	if (CONF->coGetVerbose()) LOGGER->Log("Fan was running for %f seconds, total runtime %f",l_thisRT,m_RunTime);
 
 	// -- remember the new state
 	

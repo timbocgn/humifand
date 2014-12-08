@@ -47,9 +47,7 @@ private:
     { 
     	return *this;
     };
-    
-    double CalcRuntime(void);
-    
+        
     static CFan* m_pThis;
     
     int 	m_Fan_pin_sck;

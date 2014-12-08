@@ -31,8 +31,21 @@ install: humifand
 	sudo cp -u humifand.conf /etc/.
 	sudo [ -d /var/local/humifand ] || mkdir /var/local/humifand
 	sudo cp -u humifand.rrd /var/local/humifand/.
+
 	sudo cp -u humifand.sh /etc/init.d/humifand
 	sudo chmod a+rx /etc/init.d/humifand	
-	sudo cp -u humifand /usr/sbin/.
-    sudo cp -u humifand_graph.sh /usr/sbin/.
 	sudo update-rc.d humifand defaults
+
+	sudo cp -u humifand /usr/sbin/.
+
+	sudo cp -u www/index.html /var/www
+
+	sudo cp -u humifand_graph.sh /usr/sbin/.
+	sudo chmod a+rx /usr/sbin/humifand_graph.sh
+
+	sudo cp -u humifand_mailstat.sh /usr/sbin/.
+	sudo chmod a+rx /usr/sbin/humifand_mailstat.sh
+
+	sudo cp -u humifand_checkpiusv.sh /usr/sbin/.
+	sudo chmod a+rx /usr/sbin/humifand_checkpiusv.sh
+

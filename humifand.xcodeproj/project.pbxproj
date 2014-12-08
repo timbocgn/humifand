@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		CD9A311F1A2A3FD800A872A7 /* humifand_mailstat.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = humifand_mailstat.sh; sourceTree = "<group>"; };
+		CD9A31201A2A664D00A872A7 /* humifand_checkpiusv.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = humifand_checkpiusv.sh; sourceTree = "<group>"; };
 		CDCC916E19CF6368006132DF /* logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logger.h; sourceTree = "<group>"; };
 		CDCC916F19CF6368006132DF /* logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = logger.cpp; sourceTree = "<group>"; };
 		CDCC917019CF6368006132DF /* ProcessValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessValues.h; sourceTree = "<group>"; };
@@ -23,7 +25,7 @@
 		CDCC917C19CF6368006132DF /* conffile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = conffile.cpp; sourceTree = "<group>"; };
 		CDCC917D19CF6368006132DF /* humifand.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = humifand.conf; sourceTree = "<group>"; };
 		CDCC917E19CF6368006132DF /* humifand.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = humifand.sh; sourceTree = "<group>"; };
-		CDCC917F19CF6368006132DF /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		CDCC917F19CF6368006132DF /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; usesTabs = 1; };
 		CDCC918019CF6368006132DF /* ProcessValues.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProcessValues.cpp; sourceTree = "<group>"; };
 		CDCC918119CF6368006132DF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CDCC918219CF6368006132DF /* RPi_SHT1x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RPi_SHT1x.cpp; sourceTree = "<group>"; };
@@ -41,6 +43,9 @@
 				CDCC917219CF6368006132DF /* c.sh */,
 				CDCC917319CF6368006132DF /* t.sh */,
 				CDCC917419CF6368006132DF /* README BUILD */,
+				CD9A311F1A2A3FD800A872A7 /* humifand_mailstat.sh */,
+				CD9A31201A2A664D00A872A7 /* humifand_checkpiusv.sh */,
+				CDCC918319CF6368006132DF /* humifand_graph.sh */,
 				CDCC917519CF6368006132DF /* conffile.h */,
 				CDCC917619CF6368006132DF /* www */,
 				CDCC917919CF6368006132DF /* create.sh */,
@@ -53,7 +58,6 @@
 				CDCC918019CF6368006132DF /* ProcessValues.cpp */,
 				CDCC918119CF6368006132DF /* main.cpp */,
 				CDCC918219CF6368006132DF /* RPi_SHT1x.cpp */,
-				CDCC918319CF6368006132DF /* humifand_graph.sh */,
 			);
 			sourceTree = "<group>";
 		};
