@@ -556,7 +556,7 @@ int main (int argc, char **argv)
 
 	// --- shutdown messages
     
-	LOGGER->Log("humifand deamon shutting down...let the drought be with you!");
+	LOGGER->Log("humifand deamon shutting down...may the drought be with you!");
 	
 	return 0;
 }

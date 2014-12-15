@@ -20,7 +20,7 @@ PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="humifand service"
 NAME=humifand
 DAEMON=/usr/sbin/$NAME
-DAEMON_ARGS="-- -v -d"
+DAEMON_ARGS="-- -d"
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
 
