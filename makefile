@@ -38,7 +38,7 @@ install: humifand
 
 	sudo cp -u humifand /usr/sbin/.
 
-	sudo cp -u www/index.html /var/www
+	sudo cp -u -R www/* /var/www/.
 
 	sudo cp -u humifand_graph.sh /usr/sbin/.
 	sudo chmod a+rx /usr/sbin/humifand_graph.sh

@@ -1,30 +1,283 @@
-<html><body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Humifand</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/layout.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/nav.css" media="screen" />
+		<!--[if IE 6]><link rel="stylesheet" type="text/css" href="css/ie6.css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen" /><![endif]-->
+	</head>
+	<body>
+		<div class="container_16">
+            <div class="grid_16">
+                <br>
+            </div>
 
-<table>
-	<tr>
-		<td>
-			<img src=temp.png></img>
-		</td>
-		<td>
-			<img src=temp_m.png></img>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<img src=rh.png></img>
-		</td>
-		<td>
-			<img src=rh_m.png></img>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<img src=ah.png></img>
-		</td>
-		<td>
-			<img src=ah_m.png></img>
-		</td>
-	</tr>
-</table>
+            <div class="grid_5">
+                    <img width=100% src=img/humifand_logo.png />
+                    
+			</div>
+            <div class="grid_11">
+                <h1>Control Unit</h1>
+                <b>
+                    Automatic humidity based fan control system
+                </b>
+            </div>
+            
+			<div class="clear"></div>
+            
+            <div class="grid_16">
+				<ul class="nav main">
+					<li>
+						<a href="static.html">Static Images</a>
+					</li>
+					<li class="secondary">
+						<a href="http://www.way2.net" title="Homepage">Visit way2.net</a>
+					</li>
+				</ul>
+			</div>
+            
+            <div class="clear"></div>
+            <div class="grid_16">
+                <br>
+            </div>
 
-</body></html>
+            <div class="clear"></div>
+
+    
+            <div class="grid_14">
+                <div id="container_temp" style="width:100%; height:400px;">
+                </div>
+            </div>
+
+            <div class="grid_1">
+                <button id="day_button" >Day</button>
+                <button id="week_button" >Week</button>
+                <button id="month_button">Month</button>
+            </div>
+
+            <div class="grid_14">
+                <div id="container_rh" style="width:100%; height:400px;"></div>
+            </div>
+
+            <div class="grid_14">
+                <div id="container_ah" style="width:100%; height:400px;"></div>
+            </div>
+     
+                
+                
+                
+   			<div class="clear"></div>
+			<div class="grid_16" id="site_info">
+				<div class="box">
+					<p>Humifand is Copyright (c) 2014 by way2.net Services Germany. Private use free, commercial use prohibited.   </p>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/jquery-fluid16.js"></script>
+        <script type="text/javascript" src="js/highcharts.js"></script>
+	</body>
+    
+    <script>
+        
+        
+        function UpdateCharts()
+        {
+            var optionsTemp =
+            {
+                title:
+                {
+                    text: "Humifand Temperature Graph"
+                },
+                
+                xAxis:
+                {
+                    type: 'datetime',
+                },
+                
+                yAxis:
+                [
+                 {title: {text: "Temperature in degrees"}},
+                 {title: {text: ""}   , showFirstLabel: false, showLastLabel: false, labels: {enabled: false}}
+                 ],
+                 
+                 
+                 chart:
+                 {
+                     renderTo: 'container_temp',
+                     type: 'line'
+                 },
+                 
+                 colors: ['#0000FF', '#FF0000', '#0000FF', '#FF0000','#00FF00'],
+                 
+                 series: [{ name: "Inside Temperature", zIndex : 10 },
+                          { name: "Outside Temperature", zIndex : 10},
+                          { name: "Inside Dewpoint", type: "area", zIndex: 5, fillOpacity: 0.1, lineWidth: 0},
+                          { name: "Outside Dewpoint", type: "area", zIndex : 7, fillOpacity: 0.1, lineWidth: 0},
+                          { name: "Fan", type: "area", zIndex: 0, fillOpacity: 0.3   , lineWidth: 0, yAxis: 1}]
+            };
+            
+            var optionsrH =
+            {
+                title:
+                {
+                    text: "Humifand Relative Humidity Graph"
+                },
+                
+                xAxis:
+                {
+                    type: 'datetime',
+                },
+                
+                yAxis:
+                [
+                 {title: {text: "ar in Percent"}},
+                 {title: {text: ""}   , showFirstLabel: false, showLastLabel: false, labels: {enabled: false}}
+                 ],
+                 
+                 chart:
+                 {
+                     renderTo: 'container_rh',
+                     type: 'line'
+                 },
+                 
+                 colors: ['#0000FF', '#FF0000', '#00FF00', '#FF0000'],
+                 
+                 series: [{ name: "Inside rH", zIndex : 10 },
+                          { name: "Outside rH", zIndex : 10},
+                          { name: "Fan", type: "area", zIndex: 0, fillOpacity: 0.3, lineWidth: 0, yAxis: 1}]
+                          
+            };
+            
+            var optionsaH =
+            {
+                title:
+                {
+                    text: "Humifand Absolute Humidity Graph"
+                },
+                
+                xAxis:
+                {
+                    type: 'datetime',
+                },
+                
+                yAxis:
+                [
+                 {title: {text: "aH in g/m3"}},
+                 {title: {text: ""}   , showFirstLabel: false, showLastLabel: false, labels: {enabled: false}}
+                 ],
+                 
+                 chart:
+                 {
+                     renderTo: 'container_ah',
+                     type: 'line'
+                 },
+                 
+                 colors: ['#0000FF', '#FF0000', '#00FF00', '#FF0000'],
+                 
+                 series: [{ name: "Inside aH", zIndex : 10 },
+                          { name: "Outside aH", zIndex : 10},
+                          { name: "Fan", type: "area", zIndex: 0, fillOpacity: 0.3, lineWidth: 0, yAxis: 1}]
+                          
+            };
+            
+            $('#container_temp').html("<img class=ajax-loader src=img/ajax_loader_blue_128.gif />")
+            $('#container_rh').html("<img class=ajax-loader src=img/ajax_loader_blue_128.gif />")
+            $('#container_ah').html("<img class=ajax-loader src=img/ajax_loader_blue_128.gif />")
+            
+            
+            var url =  "http://192.168.0.29/rrd.php?timeframe=" + dura + "&callback=?";
+            
+            $.getJSON(url,  function(data)
+                      {
+                      // --- the unknown values of RRD will be coded as "NAN" string by the PHP script
+                      //     as JSON has no "null" value. So translate "NAN" to null here
+                      
+                      
+                      for (s = 0; s < data.length; s++)
+                      {
+                        for (v = 0;v < data[s].length;v++)
+                        {
+                            if (data[s][v][1] == "NAN")
+                                data[s][v][1] = null;
+                        }
+                      }
+                      
+                      // --- create temperature chart
+                      
+                      optionsTemp.series[0].data = data[0];
+                      optionsTemp.series[1].data = data[1];
+                      optionsTemp.series[2].data = data[4];
+                      optionsTemp.series[3].data = data[5];
+                      optionsTemp.series[4].data = data[8];
+                      
+                      var chart = new Highcharts.Chart(optionsTemp);
+                      
+                      // --- create rH chart
+                      
+                      optionsrH.series[0].data = data[2];
+                      optionsrH.series[1].data = data[3];
+                      optionsrH.series[2].data = data[8];
+                      
+                      var chart2 = new Highcharts.Chart(optionsrH);
+                      
+                      // --- create aH chart
+                      
+                      optionsaH.series[0].data = data[6];
+                      optionsaH.series[1].data = data[7];
+                      optionsaH.series[2].data = data[8];
+                      
+                      var chart3 = new Highcharts.Chart(optionsaH);
+                      
+                      
+                      });
+                      
+        }
+    
+    // ---- document ready invocation
+    
+    $(document).ready(function()
+    {
+            dura = "day";
+            UpdateCharts();
+    });
+    
+    
+    $("#day_button").click( function()
+    {
+            dura = "day";
+            UpdateCharts();
+    });
+
+    $("#week_button").click( function()
+    {
+            dura = "week";
+            UpdateCharts();
+    });
+    
+    $("#month_button").click( function()
+    {
+            dura = "month";
+            UpdateCharts();
+    });
+    
+    
+    
+    
+        </script>
+    
+    
+    
+    
+    
+    
+    
+    
+</html>

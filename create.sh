@@ -11,13 +11,12 @@
 # 	oh		Outside absolute humidity (in g/m³)
 # 	idp		Inside dew point (°C)
 # 	odp		Outside dew point (°C)
-# 	fanr	Is 1 if the fan runs and 0 if not
+# 	fanr	Is 1 if the fan is spinning and 0 if not
 #
 # 	The step is 30 seconds, which is the probe time of humifan
 #   7 * 24 * 60 * 60 / 30 	=> 20.160 PDP's give us one week of 30 sec average
-#	365 * 24 * 60 * 60 / 600 => 52.560 PDP's give us one week of 10 min average
-# 	365*24*5 => 43.800 gives us a 5 year archive when aggregating 60*60 / 30 => 120
-#
+#	365 * 24 * 60 * 60 / (20*30) => 52.560 PDP's give us one year of 10 min average
+# 	5* 365 * 24 * 60 * 60 / (30*120)  => 43.800 gives us a 5 year of one hour
 
 
 rrdtool create humifand.rrd --step 30 \

@@ -209,7 +209,7 @@ void MainLoop(void)
 	{
 		LOGGER->Log("cycle_time missing in config file. Default to 30 sec");
 		
-		l_CycleTime = 5;		
+		l_CycleTime = 30;
 	}
 	else
 	{

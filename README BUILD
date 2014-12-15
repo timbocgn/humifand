@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------
-HOW TO BUILD humifand
+HOW TO BUILD AND INSTALL humifand
 --------------------------------------------------------------------------
 
 BASE SYSTEM
@@ -12,7 +12,7 @@ GCC and git are preinstalled, so nothing to do here.
 PREREQUISITES
 --------------------------------------------------------------------------
 
-We need to install the rrdtool and it development environment first
+We need to install the rrdtool and its development environment first
 
 sudo apt-get install rrdtool
 sudo apt-get install librrd-dev
@@ -35,11 +35,20 @@ FromLineOverride=YES
 mailhub=smtp.gmail.com:587
 UseSTARTTLS=YES
 
+To use the PHP enables AJAX version of the UI:
+
+sudo apt-get install php5
+sudo apt-get install php5-dev (this will take a while and fetch several other packages)
+sudo apt-get install php-pear
+sudo pecl install rrd (this will take a while as it compiles the extension on the raspi)
+
+put the line "extension=rrd.so" into "/etc/php5/apache2/php.ini"
+
 GPIO Lib
 --------------------------------------------------------------------------
 
-Use the provided bcm2835-1.37 lib for accessing the gpio ports. It has not
-been changed but was difficult to find as the links are not updated on the 
+Use the provided bcm2835-1.37 lib for accessing the gpio ports. It was
+difficult to find the latest version as the links were not updated on the
 web site.
 
 http://www.airspayce.com/mikem/bcm2835/
@@ -87,8 +96,8 @@ This will generate a mail when something happens.
 cron jobs
 --------------------------------------------------------------------------
 
-To enable the regular update of the graphics for the apache, add the following
-to your /etc/contrab:
+To enable the regular update of the graphics for the apache and mail, add the
+following to your /etc/contrab:
 
 */5 *   * * *   root    /usr/sbin/humifand_graph.sh >/dev/null
 
