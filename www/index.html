@@ -197,6 +197,18 @@
             
             $.getJSON(url,  function(data)
                       {
+                      
+                      // --- set timezone offset to display the x-axis right. Server sends UTC
+                      
+                      var x = new Date();
+                      var currentTimeZoneOffsetInHours = x.getTimezoneOffset();
+                      
+                      Highcharts.setOptions({
+                                            global: {
+                                                    timezoneOffset: currentTimeZoneOffsetInHours
+                                                    }
+                                            });
+                      
                       // --- the unknown values of RRD will be coded as "NAN" string by the PHP script
                       //     as JSON has no "null" value. So translate "NAN" to null here
                       
