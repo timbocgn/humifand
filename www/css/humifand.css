@@ -1,0 +1,82 @@
+.table {
+    display: table;
+    width:100%;
+}
+.row {
+    display: table-row;
+    width:100%;
+}
+.cell {
+    display: table-cell;
+    padding: 0em;
+}
+.element1 {
+    background:#CCCCCC;
+    width:20%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.element2 {
+    background:#FFFFFF;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.element3 {
+    background:#FFFFFF;
+    width:100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.element4 {
+    background:#FFFFFF;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+
+.timeelement {
+    padding-bottom: 0px;
+}
+
+.timeslider
+{
+    width:100%;
+    float:left;
+}
+
+.save_values_btn
+{
+    width:100%;
+    float:center;
+    margin-top: 30px;
+}
+
+.runtimeslider
+{
+    width:100%;
+    float:left;
+    margin-top: 15px;
+}
+
+.timeslider_ed
+{
+    float:left;
+}
+
+.timeslider_weekdaybox
+{
+    xxxwhite-space: nowrap;
+}
+
+.timevalue
+{
+    border:0;
+    color:#2e83ff;
+    font-weight:bold;
+    padding-left: 0px;
+    position: relative;
+    top: -4px;
+    xxxwidth: 50px;
+}

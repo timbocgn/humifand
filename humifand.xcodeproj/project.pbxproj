@@ -10,6 +10,31 @@
 		CD447D421A3792CE003D1826 /* rrd.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = rrd.php; sourceTree = "<group>"; };
 		CD4AAC501A366C74007DA2A0 /* highcharts.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = highcharts.js; path = js/highcharts.js; sourceTree = "<group>"; };
 		CD4AAC511A366CD5007DA2A0 /* jquery-1.11.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "jquery-1.11.1.min.js"; path = "js/jquery-1.11.1.min.js"; sourceTree = "<group>"; };
+		CD6D261B1A4EBE0B00946885 /* read_conf.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = read_conf.php; sourceTree = "<group>"; };
+		CD6D261C1A4ED21800946885 /* config.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = config.html; sourceTree = "<group>"; };
+		CD6D261D1A4F0E1300946885 /* humifand.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = humifand.css; sourceTree = "<group>"; };
+		CD6D262D1A50992500946885 /* jquery-ui.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery-ui.css"; sourceTree = "<group>"; };
+		CD6D262F1A50992500946885 /* jquery-ui.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery-ui.min.css"; sourceTree = "<group>"; };
+		CD6D26301A50992500946885 /* jquery-ui.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-ui.min.js"; sourceTree = "<group>"; };
+		CD6D26311A50992500946885 /* jquery-ui.structure.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery-ui.structure.css"; sourceTree = "<group>"; };
+		CD6D26321A50992500946885 /* jquery-ui.structure.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery-ui.structure.min.css"; sourceTree = "<group>"; };
+		CD6D26331A50992500946885 /* jquery-ui.theme.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery-ui.theme.css"; sourceTree = "<group>"; };
+		CD6D26341A50992500946885 /* jquery-ui.theme.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery-ui.theme.min.css"; sourceTree = "<group>"; };
+		CD6D26351A509DD100946885 /* ui-bg_diagonals-thick_90_eeeeee_40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-bg_diagonals-thick_90_eeeeee_40x40.png"; sourceTree = "<group>"; };
+		CD6D26361A509DD100946885 /* ui-bg_flat_15_cd0a0a_40x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-bg_flat_15_cd0a0a_40x100.png"; sourceTree = "<group>"; };
+		CD6D26371A509DD100946885 /* ui-bg_glass_50_3baae3_1x400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-bg_glass_50_3baae3_1x400.png"; sourceTree = "<group>"; };
+		CD6D26381A509DD100946885 /* ui-bg_glass_80_d7ebf9_1x400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-bg_glass_80_d7ebf9_1x400.png"; sourceTree = "<group>"; };
+		CD6D26391A509DD100946885 /* ui-bg_glass_100_e4f1fb_1x400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-bg_glass_100_e4f1fb_1x400.png"; sourceTree = "<group>"; };
+		CD6D263A1A509DD100946885 /* ui-bg_highlight-hard_70_000000_1x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-bg_highlight-hard_70_000000_1x100.png"; sourceTree = "<group>"; };
+		CD6D263B1A509DD100946885 /* ui-bg_highlight-hard_100_f2f5f7_1x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-bg_highlight-hard_100_f2f5f7_1x100.png"; sourceTree = "<group>"; };
+		CD6D263C1A509DD100946885 /* ui-bg_highlight-soft_25_ffef8f_1x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-bg_highlight-soft_25_ffef8f_1x100.png"; sourceTree = "<group>"; };
+		CD6D263D1A509DD100946885 /* ui-bg_highlight-soft_100_deedf7_1x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-bg_highlight-soft_100_deedf7_1x100.png"; sourceTree = "<group>"; };
+		CD6D263E1A509DD100946885 /* ui-icons_2e83ff_256x240.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-icons_2e83ff_256x240.png"; sourceTree = "<group>"; };
+		CD6D263F1A509DD100946885 /* ui-icons_3d80b3_256x240.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-icons_3d80b3_256x240.png"; sourceTree = "<group>"; };
+		CD6D26401A509DD100946885 /* ui-icons_72a7cf_256x240.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-icons_72a7cf_256x240.png"; sourceTree = "<group>"; };
+		CD6D26411A509DD100946885 /* ui-icons_2694e8_256x240.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-icons_2694e8_256x240.png"; sourceTree = "<group>"; };
+		CD6D26421A509DD100946885 /* ui-icons_ffffff_256x240.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui-icons_ffffff_256x240.png"; sourceTree = "<group>"; };
+		CD6D26431A557B1E00946885 /* write_conf.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = write_conf.php; sourceTree = "<group>"; };
 		CD875C001A3AFE6D00BEC7AF /* jquery-1.3.2.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "jquery-1.3.2.min.js"; path = "js/jquery-1.3.2.min.js"; sourceTree = "<group>"; };
 		CD875C011A3AFE6D00BEC7AF /* jquery-fluid16.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "jquery-fluid16.js"; path = "js/jquery-fluid16.js"; sourceTree = "<group>"; };
 		CD875C021A3AFE6D00BEC7AF /* jquery-ui.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "jquery-ui.js"; path = "js/jquery-ui.js"; sourceTree = "<group>"; };
@@ -62,6 +87,27 @@
 			name = js;
 			sourceTree = "<group>";
 		};
+		CD6D261E1A50992500946885 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				CD6D26351A509DD100946885 /* ui-bg_diagonals-thick_90_eeeeee_40x40.png */,
+				CD6D26361A509DD100946885 /* ui-bg_flat_15_cd0a0a_40x100.png */,
+				CD6D26371A509DD100946885 /* ui-bg_glass_50_3baae3_1x400.png */,
+				CD6D26381A509DD100946885 /* ui-bg_glass_80_d7ebf9_1x400.png */,
+				CD6D26391A509DD100946885 /* ui-bg_glass_100_e4f1fb_1x400.png */,
+				CD6D263A1A509DD100946885 /* ui-bg_highlight-hard_70_000000_1x100.png */,
+				CD6D263B1A509DD100946885 /* ui-bg_highlight-hard_100_f2f5f7_1x100.png */,
+				CD6D263C1A509DD100946885 /* ui-bg_highlight-soft_25_ffef8f_1x100.png */,
+				CD6D263D1A509DD100946885 /* ui-bg_highlight-soft_100_deedf7_1x100.png */,
+				CD6D263E1A509DD100946885 /* ui-icons_2e83ff_256x240.png */,
+				CD6D263F1A509DD100946885 /* ui-icons_3d80b3_256x240.png */,
+				CD6D26401A509DD100946885 /* ui-icons_72a7cf_256x240.png */,
+				CD6D26411A509DD100946885 /* ui-icons_2694e8_256x240.png */,
+				CD6D26421A509DD100946885 /* ui-icons_ffffff_256x240.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		CD875C031A3AFE8B00BEC7AF /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +128,14 @@
 		CD875C071A3AFE8B00BEC7AF /* css */ = {
 			isa = PBXGroup;
 			children = (
+				CD6D261E1A50992500946885 /* images */,
+				CD6D262D1A50992500946885 /* jquery-ui.css */,
+				CD6D262F1A50992500946885 /* jquery-ui.min.css */,
+				CD6D26301A50992500946885 /* jquery-ui.min.js */,
+				CD6D26311A50992500946885 /* jquery-ui.structure.css */,
+				CD6D26321A50992500946885 /* jquery-ui.structure.min.css */,
+				CD6D26331A50992500946885 /* jquery-ui.theme.css */,
+				CD6D26341A50992500946885 /* jquery-ui.theme.min.css */,
 				CD875C081A3AFE8B00BEC7AF /* 960.css */,
 				CD875C091A3AFE8B00BEC7AF /* grid.css */,
 				CD875C0A1A3AFE8B00BEC7AF /* ie.css */,
@@ -90,6 +144,7 @@
 				CD875C0D1A3AFE8B00BEC7AF /* nav.css */,
 				CD875C0E1A3AFE8B00BEC7AF /* reset.css */,
 				CD875C0F1A3AFE8B00BEC7AF /* text.css */,
+				CD6D261D1A4F0E1300946885 /* humifand.css */,
 			);
 			path = css;
 			sourceTree = "<group>";
@@ -130,7 +185,10 @@
 				CD875C071A3AFE8B00BEC7AF /* css */,
 				CD4AAC4D1A366B98007DA2A0 /* js */,
 				CDCC917719CF6368006132DF /* index.html */,
+				CD6D261C1A4ED21800946885 /* config.html */,
 				CD447D421A3792CE003D1826 /* rrd.php */,
+				CD6D261B1A4EBE0B00946885 /* read_conf.php */,
+				CD6D26431A557B1E00946885 /* write_conf.php */,
 				CD875C101A3AFED300BEC7AF /* static.html */,
 			);
 			path = www;

@@ -1,0 +1,799 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Humifand</title>
+        <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/layout.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/nav.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/humifand.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+
+        <!--[if IE 6]><link rel="stylesheet" type="text/css" href="css/ie6.css" media="screen" /><![endif]-->
+        <!--[if IE 7]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen" /><![endif]-->
+    </head>
+    <body>
+        <div class="container_16">
+            <div class="grid_16">
+                <br>
+            </div>
+            
+            <div class="grid_5">
+                <img width=100% src=img/humifand_logo.png />
+                
+            </div>
+            <div class="grid_11">
+                <h1>Control Unit</h1>
+                <b>
+                    Automatic humidity based fan control system
+                </b>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div class="grid_16">
+                <ul class="nav main">
+                    <li>
+                        <a href="static.html">Static Images</a>
+                    </li>
+                    <li>
+                        <a href="config.html">Configuration</a>
+                    </li>
+                    <li class="secondary">
+                        <a href="http://www.way2.net" title="Homepage">Visit way2.net</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="clear"></div>
+            <div class="grid_16">
+                <br>
+            </div>
+            
+            <div class="clear"></div>
+            
+            
+            <div class="grid_16">
+                <h1>Configuration Options</h1>
+    
+                <div class="table">
+                    <div class="row">
+                        <div class="cell element1">
+                            <label for="min_inside_temp">Minimum inside temperature (°C)</label>
+                        </div>
+
+                        <div class="cell element2">
+                        </div>
+
+                        <div class="cell element3">
+                            <input id="min_inside_temp" name="min_inside_temp" >
+                        </div>
+                        
+                        <div class="cell element4">
+                        </div>
+                       
+                    </div>
+                    <div class="row">
+                        <div class="cell element1">
+                            <label for="min_outside_temp">Minimum outside temperature (°C)</label>
+                        </div>
+                        <div class="cell element2">
+                        </div>
+                        <div class="cell element3">
+                            <input id="min_outside_temp" name="min_outside_temp" >
+                        </div>
+                        <div class="cell element4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell element1">
+                            <label for="humi_diff_on">Absolute humidity difference ON (g/m^3)</label>
+                        </div>
+                        <div class="cell element2">
+                        </div>
+                        <div class="cell element3">
+                            <input id="humi_diff_on" name="humi_diff_on">
+                        </div>
+                        <div class="cell element4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell element1">
+                            <label for="humi_diff_off">Absolute humidity difference OFF (g/m^3)</label>
+                        </div>
+                        <div class="cell element2">
+                        </div>
+                        <div class="cell element3">
+                            <input id="humi_diff_off" name="humi_diff_off" >
+                        </div>
+                        <div class="cell element4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell element1">
+                            <label for="min_inside_rh">Minimum insie relative humidty (rH)</label>
+                        </div>
+                        <div class="cell element2">
+                        </div>
+                        <div class="cell element3">
+                            <input id="min_inside_rh" name="min_inside_rh" >
+                        </div>
+                        <div class="cell element4">
+                        </div>
+                    </div>
+                    
+                    <!--- ------------------------------------------------------------- --->
+
+                    <div class="row">
+                        <div class="cell element1">
+                            <label for="max_daily_fan_runtime">Maximum daily runtime for the fans</label>
+                        </div>
+                        
+                        <div class="cell element2">
+                        </div>
+                        
+                        <div class="cell element3">
+                                <div class="runtimeslider" id="runtime_slider"></div>
+                        </div>
+                        
+                        <div class="cell element4">
+                                <input type="text" id="runtime_slider_value" readonly class="timevalue">
+                        </div>
+                    </div>
+
+                    <!--- 1 ------------------------------------------------------------- --->
+
+                    <div class="row">
+                        <div class="cell element1">
+                            <label for="time_slider_1">Timeframe 1</label>
+                        </div>
+                        <div class="cell element2 timeelement">
+                            
+                            <div class="timeslider_ed">
+                                <input type="checkbox" id="time_slider_1_ed"><label for="time_slider_1_ed">A</label>
+                            </div>
+                        </div>
+                            
+                        <div class="cell element3">
+                            <div class="timeslider" id="time_slider_1"></div>
+                        </div>
+                        
+                        <div class="cell element4">
+                            <input type="text" id="time_slider_1_value" readonly class="timevalue">
+                        </div>
+                    
+                    </div>
+
+                    <div class="row">
+                        <div class="cell element1">
+                        </div>
+                        <div class="cell element2 timeelement">
+                        </div>
+                            
+                        <div class="cell element3">
+                            <div id="time_Weekday_1" class="timeslider_Weekdaybox">
+                                <input type="checkbox" id="time_slider_1_Mo"><label for="time_slider_1_Mo">Mo</label>
+                                <input type="checkbox" id="time_slider_1_Tu"><label for="time_slider_1_Tu">Tu</label>
+                                <input type="checkbox" id="time_slider_1_We"><label for="time_slider_1_We">We</label>
+                                <input type="checkbox" id="time_slider_1_Th"><label for="time_slider_1_Th">Th</label>
+                                <input type="checkbox" id="time_slider_1_Fr"><label for="time_slider_1_Fr">Fr</label>
+                                <input type="checkbox" id="time_slider_1_Sa"><label for="time_slider_1_Sa">Sa</label>
+                                <input type="checkbox" id="time_slider_1_Su"><label for="time_slider_1_Su">Su</label>
+                            </div>
+                        </div>
+                        <div class="cell element4">
+                        </div>
+
+                     </div>
+                    
+                    <!--- 2 ------------------------------------------------------------- --->
+
+                    <div class="row">
+                        <div class="cell element1">
+                            <label for="time_slider_2">Timeframe 2</label>
+                        </div>
+                        <div class="cell element2 timeelement">
+                            
+                            <div class="timeslider_ed">
+                                <input type="checkbox" id="time_slider_2_ed"><label for="time_slider_2_ed">A</label>
+                            </div>
+                        </div>
+                            
+                        <div class="cell element3">
+                            <div class="timeslider" id="time_slider_2"></div>
+                        </div>
+                        
+                        <div class="cell element4">
+                            <input type="text" id="time_slider_2_value" readonly class="timevalue">
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="cell element1">
+                        </div>
+                        <div class="cell element2 timeelement">
+                        </div>
+                            
+                        <div class="cell element3">
+                            <div id="time_Weekday_2" class="timeslider_Weekdaybox">
+                                <input type="checkbox" id="time_slider_2_Mo"><label for="time_slider_2_Mo">Mo</label>
+                                <input type="checkbox" id="time_slider_2_Tu"><label for="time_slider_2_Tu">Tu</label>
+                                <input type="checkbox" id="time_slider_2_We"><label for="time_slider_2_We">We</label>
+                                <input type="checkbox" id="time_slider_2_Th"><label for="time_slider_2_Th">Th</label>
+                                <input type="checkbox" id="time_slider_2_Fr"><label for="time_slider_2_Fr">Fr</label>
+                                <input type="checkbox" id="time_slider_2_Sa"><label for="time_slider_2_Sa">Sa</label>
+                                <input type="checkbox" id="time_slider_2_Su"><label for="time_slider_2_Su">Su</label>
+                            </div>
+                        </div>
+                        <div class="cell element4">
+                        </div>
+
+                     </div>
+
+                    <!--- 3 ------------------------------------------------------------- --->
+
+                    <div class="row">
+                        <div class="cell element1">
+                            <label for="time_slider_3">Timeframe 3</label>
+                        </div>
+                        <div class="cell element2 timeelement">
+                            
+                            <div class="timeslider_ed">
+                                <input type="checkbox" id="time_slider_3_ed"><label for="time_slider_3_ed">A</label>
+                            </div>
+                        </div>
+                            
+                        <div class="cell element3">
+                            <div class="timeslider" id="time_slider_3"></div>
+                        </div>
+                        
+                        <div class="cell element4">
+                            <input type="text" id="time_slider_3_value" readonly class="timevalue">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell element1">
+                        </div>
+                        <div class="cell element2 timeelement">
+                        </div>
+                            
+                        <div class="cell element3">
+                            <div id="time_Weekday_3" class="timeslider_Weekdaybox">
+                                <input type="checkbox" id="time_slider_3_Mo"><label for="time_slider_3_Mo">Mo</label>
+                                <input type="checkbox" id="time_slider_3_Tu"><label for="time_slider_3_Tu">Tu</label>
+                                <input type="checkbox" id="time_slider_3_We"><label for="time_slider_3_We">We</label>
+                                <input type="checkbox" id="time_slider_3_Th"><label for="time_slider_3_Th">Th</label>
+                                <input type="checkbox" id="time_slider_3_Fr"><label for="time_slider_3_Fr">Fr</label>
+                                <input type="checkbox" id="time_slider_3_Sa"><label for="time_slider_3_Sa">Sa</label>
+                                <input type="checkbox" id="time_slider_3_Su"><label for="time_slider_3_Su">Su</label>
+                            </div>
+                        </div>
+                        <div class="cell element4">
+                        </div>
+
+                     </div>
+                    
+                    <!--- 4 ------------------------------------------------------------- --->
+                    
+                    <div class="row">
+                        <div class="cell element1">
+                            <label for="time_slider_4">Timeframe 4</label>
+                        </div>
+                        <div class="cell element2 timeelement">
+                            
+                            <div class="timeslider_ed">
+                                <input type="checkbox" id="time_slider_4_ed"><label for="time_slider_4_ed">A</label>
+                            </div>
+                        </div>
+                            
+                        <div class="cell element3">
+                            <div class="timeslider" id="time_slider_4"></div>
+                        </div>
+                        
+                        <div class="cell element4">
+                            <input type="text" id="time_slider_4_value" readonly class="timevalue">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell element1">
+                        </div>
+                        <div class="cell element2 timeelement">
+                        </div>
+                            
+                        <div class="cell element3">
+                            <div id="time_Weekday_4" class="timeslider_Weekdaybox">
+                                <input type="checkbox" id="time_slider_4_Mo"><label for="time_slider_4_Mo">Mo</label>
+                                <input type="checkbox" id="time_slider_4_Tu"><label for="time_slider_4_Tu">Tu</label>
+                                <input type="checkbox" id="time_slider_4_We"><label for="time_slider_4_We">We</label>
+                                <input type="checkbox" id="time_slider_4_Th"><label for="time_slider_4_Th">Th</label>
+                                <input type="checkbox" id="time_slider_4_Fr"><label for="time_slider_4_Fr">Fr</label>
+                                <input type="checkbox" id="time_slider_4_Sa"><label for="time_slider_4_Sa">Sa</label>
+                                <input type="checkbox" id="time_slider_4_Su"><label for="time_slider_4_Su">Su</label>
+                            </div>
+                        </div>
+                        <div class="cell element4">
+                        </div>
+
+                     </div>
+                    
+                    <!--- 5 ------------------------------------------------------------- --->
+                    
+                    <div class="row">
+                        <div class="cell element1">
+                            <label for="time_slider_5">Timeframe 5</label>
+                        </div>
+                        <div class="cell element2 timeelement">
+                            
+                            <div class="timeslider_ed">
+                                <input type="checkbox" id="time_slider_5_ed"><label for="time_slider_5_ed">A</label>
+                            </div>
+                        </div>
+                            
+                        <div class="cell element3">
+                            <div class="timeslider" id="time_slider_5"></div>
+                        </div>
+                        
+                        <div class="cell element4">
+                            <input type="text" id="time_slider_5_value" readonly class="timevalue">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell element1">
+                        </div>
+                        <div class="cell element2 timeelement">
+                        </div>
+                            
+                        <div class="cell element3">
+                            <div id="time_Weekday_5" class="timeslider_Weekdaybox">
+                                <input type="checkbox" id="time_slider_5_Mo"><label for="time_slider_5_Mo">Mo</label>
+                                <input type="checkbox" id="time_slider_5_Tu"><label for="time_slider_5_Tu">Tu</label>
+                                <input type="checkbox" id="time_slider_5_We"><label for="time_slider_5_We">We</label>
+                                <input type="checkbox" id="time_slider_5_Th"><label for="time_slider_5_Th">Th</label>
+                                <input type="checkbox" id="time_slider_5_Fr"><label for="time_slider_5_Fr">Fr</label>
+                                <input type="checkbox" id="time_slider_5_Sa"><label for="time_slider_5_Sa">Sa</label>
+                                <input type="checkbox" id="time_slider_5_Su"><label for="time_slider_5_Su">Su</label>
+                            </div>
+                        </div>
+                        <div class="cell element4">
+                        </div>
+
+                     </div>
+                    
+                    <!--- ------------------------------------------------------------- --->
+
+                    <div class="row">
+                        <div class="cell element1"></div>
+                        
+                        <div class="cell element2">
+                            <div class="save_values_btn">
+                                <input type="submit" id="save_values">
+                            </div>
+                        </div>
+                        <div class="cell element3" id="err-text" ></div>
+                        <div class="cell element4"></div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        <div>
+            <div class="grid_1">
+            </div>
+   
+            <div class="grid_16">
+                <br>
+            </div>
+            
+            <div class="grid_16" id="site_info">
+                <div class="box">
+                    <p>Humifand is Copyright (c) 2014 by way2.net Services Germany. Private use free, commercial use prohibited.   </p>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/jquery-fluid16.js"></script>
+    </body>
+    
+    <script>
+        
+    // -----------------------------------------------------------------------------------------
+    
+    function DateToString(value)
+    {
+        var h = Math.floor(value / 60);
+        var m = value % 60;
+        
+        if (h>=24) { h=23; m = 59; }
+        if (h<0) { h=0; m = 0; }
+    
+        if (m<10)
+            return h.toString().concat(":0").concat(m.toString());
+        else
+            return h.toString().concat(":").concat(m.toString());
+        
+    }
+
+    // -----------------------------------------------------------------------------------------
+
+    function StringToDate(value)
+    {
+        var res = value.split(":");
+        return parseInt(res[0])*60+parseInt(res[1]);
+    }
+
+    // -----------------------------------------------------------------------------------------
+    
+    $.widget( "ui.timespinner", $.ui.spinner,
+    {
+         options: {
+         // seconds
+         step: 1,
+         // hours
+         page: 60
+         },
+         
+         _parse: function( value )
+         {
+            if ( typeof value === "string" )
+            {
+                // already a timestamp
+                if ( Number( value ) == value )
+                {
+                    return Number( value );
+                }
+        
+                return StringToDate(value);
+            }
+            return value;
+         },
+         
+         _format: function( value )
+         {
+             return DateToString(value);
+         }
+    });
+    
+    // -----------------------------------------------------------------------------------------
+
+    function UpdateSliderText(controlId)
+    {
+        $( controlId.concat("_value")).val( DateToString($(controlId).slider("values",0)) + " - " + DateToString($(controlId).slider("values",1)));
+    }
+    
+    // -----------------------------------------------------------------------------------------
+
+    function UpdateRuntimeSliderText(controlId)
+    {
+        $(controlId.concat("_value")).val( DateToString($(controlId).slider("values",0)));
+    }
+    
+    // -----------------------------------------------------------------------------------------
+    
+    function EnableDisableDateControl(controlId)
+    {
+        eord = $(controlId.concat("_ed")).prop('checked');
+        
+        if (eord)
+        {
+            $(controlId).slider("enable");
+        }
+        else
+        {
+            $(controlId).slider("disable");
+            
+        }
+
+        // --- now use an array loop to set all the checkboxes based on the weekdays
+        
+        var a = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+        a.forEach(function(entry)
+          {
+          var w = $(controlId.concat("_").concat(entry));
+          
+          if (eord)
+            w.button("enable");
+          else
+            w.button("disable");
+          
+          w.button("refresh");
+          
+          });
+    }
+
+
+    // -----------------------------------------------------------------------------------------
+
+    function ControlToDate(data,dateString,controlId)
+    {
+        // --- if not enabled
+        if ($(controlId.concat("_ed")).prop('checked') == true)
+        {
+            s = DateToString($(controlId).slider( "values", 0))
+                .concat("-")
+                .concat(DateToString($(controlId).slider( "values", 1)))
+                .concat(";");
+                
+            // --- now use an array loop to set all the checkboxes based on the weekdays
+
+            var a = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+            a.forEach(function(entry)
+            {
+              if ($(controlId.concat("_").concat(entry)).prop('checked') == true)
+                      s = s.concat(entry);
+            });
+
+            data[dateString] = s;
+            return true;
+        }
+        else
+        {
+            dateString = "";
+            return false;
+        }
+    }
+        
+    // -----------------------------------------------------------------------------------------
+    
+    function DateToControl(dateString,controlId)
+    {
+        if (dateString)
+        {
+            // --- date in config: enable
+            
+            $(controlId.concat("_ed")).prop('checked',true);
+            $(controlId.concat("_ed")).button("refresh");
+            
+            // --- first the string: split at "-" for getting from date and then at ";" to get till date and weekdays
+            
+            var res1 = dateString.split("-");
+            var res2 = res1[1].split(";");
+            
+            var from_date = StringToDate(res1[0]);
+            var till_date = StringToDate(res2[0]);
+            
+            // --- set the values of the slide and update the text
+            
+            $(controlId).slider( "values", 0, from_date);
+            $(controlId).slider( "values", 1, till_date);
+            $(controlId).slider("enable");
+            
+            UpdateSliderText(controlId);
+     
+            // --- now use an array loop to set all the checkboxes based on the weekdays
+            
+            var a = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+            a.forEach(function(entry)
+            {
+                var w = $(controlId.concat("_").concat(entry));
+                w.prop('checked', res2[1].search(entry) != -1);
+                w.button("enable");
+                w.button("refresh");
+
+            });
+        }
+        else
+        {
+            // --- date NOT in config: disable
+            
+            $(controlId.concat("_ed")).prop('checked',false);
+            $(controlId.concat("_ed")).button("refresh");
+            
+            $(controlId).slider("disable");
+            
+            var a = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+            a.forEach(function(entry)
+            {
+                var w = $(controlId.concat("_").concat(entry));
+                w.button("disable");
+                w.button("refresh");
+                      
+            });
+        }
+    }
+    
+    // -----------------------------------------------------------------------------------------
+    
+    function UpdateControls(data,toControl)
+    {
+        if (toControl == true)
+        {
+            $( "#min_inside_temp" ).spinner("value",data["min_inside_temp"]);
+            $( "#min_outside_temp" ).spinner("value",data["min_outside_temp"]);
+            $( "#humi_diff_on" ).spinner("value",data["humi_diff_on"]);
+            $( "#humi_diff_off" ).spinner("value",data["humi_diff_off"]);
+            $( "#min_inside_rh" ).spinner("value",data["min_inside_rh"]);
+            
+            $("#runtime_slider").slider( "values", 0, parseInt(data["max_daily_fan_runtime"]));
+            UpdateRuntimeSliderText("#runtime_slider");
+            
+            DateToControl(data["active_time_1"],"#time_slider_1");
+            DateToControl(data["active_time_2"],"#time_slider_2");
+            DateToControl(data["active_time_3"],"#time_slider_3");
+            DateToControl(data["active_time_4"],"#time_slider_4");
+            DateToControl(data["active_time_5"],"#time_slider_5");
+        }
+        else
+        {
+        
+            data["min_inside_temp"] = $( "#min_inside_temp" ).spinner("value");
+            data["humi_diff_on"] = $( "#humi_diff_on" ).spinner("value");
+            data["humi_diff_off"] = $( "#humi_diff_off" ).spinner("value");
+            data["min_inside_rh"] = $( "#min_inside_rh" ).spinner("value");
+
+            data["max_daily_fan_runtime"] = $( "#runtime_slider" ).slider("values",0);
+
+            
+            ControlToDate(data,"active_time_1","#time_slider_1");
+            ControlToDate(data,"active_time_2","#time_slider_2");
+            ControlToDate(data,"active_time_3","#time_slider_3");
+            ControlToDate(data,"active_time_4","#time_slider_4");
+            ControlToDate(data,"active_time_5","#time_slider_5");
+        }
+    }
+        
+    // -----------------------------------------------------------------------------------------
+
+    function UpdateData()
+    {
+        var url =  "http://192.168.0.29/read_conf.php?callback=?";
+        
+        $.getJSON(url,function(data)
+        {
+            UpdateControls(data,true);
+        });
+    }
+    
+    // -----------------------------------------------------------------------------------------
+    // --- Display ok text right next to the submit button
+    
+    function displaySuccess()
+    {
+        $( "#err-text" ).hide();
+        $( "#err-text" ).html("<B>" + "Success" + "</B>");
+        $( "#err-text" ).fadeIn();
+        $( "#err-text" ).fadeOut(1000);
+    }
+
+    // --- Display error text right next to the submit button
+    
+    function displayError(etext)
+    {
+        $( "#err-text" ).hide();
+        $( "#err-text" ).html("<B>" + etext + "</B>");
+        $( "#err-text" ).fadeIn();
+    }
+
+    // -----------------------------------------------------------------------------------------
+
+    $("#time_slider_1_ed").click( function()
+    {
+        EnableDisableDateControl("#time_slider_1");
+    });
+
+    $("#time_slider_2_ed").click( function()
+    {
+        EnableDisableDateControl("#time_slider_2");
+    });
+    
+    $("#time_slider_3_ed").click( function()
+    {
+        EnableDisableDateControl("#time_slider_3");
+    });
+    
+    $("#time_slider_4_ed").click( function()
+    {
+        EnableDisableDateControl("#time_slider_4");
+    });
+    
+    $("#time_slider_5_ed").click( function()
+    {
+        EnableDisableDateControl("#time_slider_5");
+    });
+
+    $("#save_values").click( function()
+    {
+        var mydata = {};
+                            
+        // --- put all parameters into a JS object
+                            
+        UpdateControls(mydata,false);
+                            
+        // --- post a please wait to the user
+                            
+                            
+        displayError("Please wait...");
+                        
+        
+        $.ajax({
+               type: 'POST',
+               url: 'http://192.168.0.29/write_conf.php',
+               dataType: 'text',
+               data: mydata,
+               
+               success: function(data, textStatus, jqXHR )
+               {
+                    if (data.substr(0,1) == "0")
+                        displayError("Failed to save the new configuration: '" + data.substr(1) + "'");
+                    else
+                        displaySuccess();
+               },
+               error: function(jqXHR, textStatus, errorThrown)
+               {
+                    displayError("Failed to save the new configuration: '" + errorThrown + "'");
+               }
+        });
+                            
+    });
+
+    // -----------------------------------------------------------------------------------------
+
+    // ---- document ready invocation
+    
+    $(document).ready(function()
+    {
+          // --- normal controls
+                      
+          $( "#min_inside_temp" ).spinner({ step: 0.5, numberFormat: "n", min: -40, max: 40});
+          $( "#min_outside_temp" ).spinner({ step: 0.5, numberFormat: "n" , min: -40, max: 40});
+          $( "#humi_diff_on" ).spinner({ step: 0.1, numberFormat: "n", min: 0, max: 15 });
+          $( "#humi_diff_off" ).spinner({ step: 0.1, numberFormat: "n", min: -0, max: 15 });
+          $( "#min_inside_rh" ).spinner({ step: 1, numberFormat: "n" , min: 30, max: 100});
+
+          $( "#runtime_slider" ).slider({ range: false, min: 0, max: 24*60-1,values: [ 0 ],
+                                          slide: function( event, ui ) { UpdateRuntimeSliderText("#runtime_slider"); },});
+                      
+          // --- range sliders
+                      
+          $( "#time_slider_1" ).slider({ range: true, min: 0, max: 24*60-1,values: [ 0, 480 ],
+                                       slide: function( event, ui ) { UpdateSliderText("#time_slider_1"); },});
+          $( "#time_slider_2" ).slider({ range: true, min: 0, max: 24*60-1,values: [ 0, 480 ],
+                                       slide: function( event, ui ) { UpdateSliderText("#time_slider_2"); },});
+          $( "#time_slider_3" ).slider({ range: true, min: 0, max: 24*60-1,values: [ 0, 480 ],
+                                       slide: function( event, ui ) { UpdateSliderText("#time_slider_3"); },});
+          $( "#time_slider_4" ).slider({ range: true, min: 0, max: 24*60-1,values: [ 0, 480 ],
+                                       slide: function( event, ui ) { UpdateSliderText("#time_slider_4"); },});
+          $( "#time_slider_5" ).slider({ range: true, min: 0, max: 24*60-1,values: [ 0, 480 ],
+                                       slide: function( event, ui ) { UpdateSliderText("#time_slider_5"); },});
+          // --- weekday buttons
+                      
+          $( "#time_Weekday_1" ).buttonset();
+          $( "#time_Weekday_2" ).buttonset();
+          $( "#time_Weekday_3" ).buttonset();
+          $( "#time_Weekday_4" ).buttonset();
+          $( "#time_Weekday_5" ).buttonset();
+
+          // --- "Active" buttons
+                      
+          $("#time_slider_1_ed").button();
+          $("#time_slider_2_ed").button();
+          $("#time_slider_3_ed").button();
+          $("#time_slider_4_ed").button();
+          $("#time_slider_5_ed").button();
+
+          $("#save_values").button();
+
+                      
+          // --- put the values to the controls
+                      
+          UpdateData();
+    });
+                      
+
+</script>
+    
+    
+    
+    
+    
+    
+    
+    
+</html>
