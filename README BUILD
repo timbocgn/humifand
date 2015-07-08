@@ -61,6 +61,17 @@ http://www.airspayce.com/mikem/bcm2835/
 *  sudo make check
 *  sudo make install
 
+Creating the initial rrd file
+--------------------------------------------------------------------------
+
+The empty RRD file can be created using the create.sh script. By intention
+this is not included in the make file to avoid accidentially overwriting
+existing RRD files.
+
+Please invoke the script prio to the make (next step) run. The rrd file is
+created in the local directory.
+
+
 humifand itself
 --------------------------------------------------------------------------
 
@@ -69,6 +80,17 @@ To build and install the daemon please use:
 make clean
 make
 make install
+
+hardware
+--------------------------------------------------------------------------
+
+The basic wiring of the components is described in the connections.png file
+contained in this archive.
+
+Note that the Q1 / R1 circuit is necessary to convert
+the 3.3V based output of the Raspi to the relais cards needs. Please check the
+relais card documentation if this open collector circuit is compatible!
+
 
 Using PI USV
 --------------------------------------------------------------------------

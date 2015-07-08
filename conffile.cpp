@@ -14,6 +14,8 @@
 #include <locale>
 
 #include "conffile.h"
+#include "logger.h"
+
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -40,6 +42,9 @@ const char *g_AllowedOptions[]
 	"debug_ot",
 	"debug_orh",
 	"max_daily_fan_runtime",
+    "min_inside_temp_hyst",
+    "min_outside_temp_hyst",
+    "min_inside_rh_hyst",
 	
 	NULL
 };
@@ -99,9 +104,39 @@ int ConfFile::GetOptionInt(const char *f_key)
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
+int ConfFile::GetOptionIntDefault(const char *f_key,int f_default)
+{
+    if (isValid(f_key))
+    {
+        return GetOptionInt(f_key);
+    }
+    else
+    {
+        LOGGER->Log("'%s' missing in config file. Default to %d",f_key,f_default);
+        return f_default;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+
 float ConfFile::GetOptionFloat(const char *f_key)
 {
 	return atof(myMap[f_key].c_str());
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+float ConfFile::GetOptionFloatDefault(const char *f_key,float f_default)
+{
+    if (isValid(f_key))
+    {
+        return GetOptionFloat(f_key);
+    }
+    else
+    {
+        LOGGER->Log("'%s' missing in config file. Default to %f",f_key,f_default);
+        return f_default;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////

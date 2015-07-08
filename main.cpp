@@ -203,18 +203,8 @@ bool AskSensor(SHT1x &f_Sensor,float &f_Humi, float &f_Temp)
 
 void MainLoop(void)
 {
-	int l_CycleTime;
-	
-	if (!CONF->isValid("cycle_time"))
-	{
-		LOGGER->Log("cycle_time missing in config file. Default to 30 sec");
-		
-		l_CycleTime = 30;
-	}
-	else
-	{
-		l_CycleTime = CONF->GetOptionInt("log_file");
-	}
+    int l_CycleTime = CONF->GetOptionIntDefault("cycle_time",30);
+    LOGGER->Log("Cycle time is %d seconds.",l_CycleTime);
 
 	// --- do some init (fan and sensors)
 
@@ -541,7 +531,7 @@ int main (int argc, char **argv)
 
 	// --- startup messages
 	
-	LOGGER->Log("humifand deamon starting up...let's make it less wet!");
+	LOGGER->Log("humifand deamon (v1.1) starting up...let's make it less wet!");
 	
 	// --- Enter the main loop
 	

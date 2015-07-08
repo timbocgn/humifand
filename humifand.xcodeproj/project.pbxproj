@@ -72,6 +72,7 @@
 		CDCC918119CF6368006132DF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CDCC918219CF6368006132DF /* RPi_SHT1x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RPi_SHT1x.cpp; sourceTree = "<group>"; };
 		CDCC918319CF6368006132DF /* humifand_graph.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = humifand_graph.sh; sourceTree = "<group>"; };
+		CDF168E81B4DA737001D3399 /* connections.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connections.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -152,6 +153,7 @@
 		CDCC916119CF6215006132DF = {
 			isa = PBXGroup;
 			children = (
+				CDF168E81B4DA737001D3399 /* connections.png */,
 				CDCC916E19CF6368006132DF /* logger.h */,
 				CDCC916F19CF6368006132DF /* logger.cpp */,
 				CDCC917019CF6368006132DF /* ProcessValues.h */,

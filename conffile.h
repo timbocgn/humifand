@@ -79,8 +79,10 @@ public:
 	
 	void Clear(void);
 	std::string GetOption(const char *f_key);
-	int GetOptionInt(const char *f_key);	
+	int GetOptionInt(const char *f_key);
+    int GetOptionIntDefault(const char *f_key,int f_default);    
 	float GetOptionFloat(const char *f_key);
+    float GetOptionFloatDefault(const char *f_key,float f_default);
 	
 	bool isValid(const char *f_key);
 	

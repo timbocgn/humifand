@@ -21,6 +21,15 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
+// --- true here means that the fan will run in doubt in the first check, so hysteresis
+//     will not be checked until the first "change" has occurred
+
+bool g_min_inside_temp_oldstate  = true;
+bool g_min_outside_temp_oldstate = true;
+bool g_min_inside_rh_oldstate    = true;
+
+////////////////////////////////////////////////////////////////////////////////////////
+
 int GetTimeValue(int h,int m)
 {
 	return h*60 + m;
@@ -183,39 +192,71 @@ bool CheckTimeString(void)
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
+bool CheckHyst(float f_Value,float f_Threshold,float f_Hysteresis,bool f_oldState)
+{
+    // --- if we're below hysteresis, it is false
+    
+    if (f_Value < (f_Threshold-f_Hysteresis/2))
+    {
+        return false;
+    }
+    
+    // --- if we're above hysteresis, it is true
+
+    if (f_Value > (f_Threshold+f_Hysteresis/2))
+    {
+        return true;
+    }
+    
+    // --- for the range inbetween: don't change!
+    
+    return f_oldState;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+
 bool IsFanAllowed(float f_it,float f_ih, float f_ot, float f_oh)
 {
-	// --- get some valus from the config file
+    bool l_outcome = true;
+    
+	// --- get some values from the config file
 	
 	float l_min_inside_temp 		= CONF->GetOptionFloat("min_inside_temp");
 	float l_min_outside_temp 		= CONF->GetOptionFloat("min_outside_temp");
 	float l_min_inside_rh 			= CONF->GetOptionFloat("min_inside_rh");
 	float l_max_daily_fan_runtime 	= CONF->GetOptionFloat("max_daily_fan_runtime")*60;
+    
+    float l_min_inside_temp_hyst	= CONF->GetOptionFloatDefault("min_inside_temp_hyst",   1.0);
+    float l_min_outside_temp_hyst	= CONF->GetOptionFloatDefault("min_outside_temp_hyst",  1.0);
+    float l_min_inside_rh_hyst 		= CONF->GetOptionFloatDefault("min_inside_rh_hyst",     2.0);
 	
-	// --- l_min_inside_temp
-	
-	if (f_it <= l_min_inside_temp)
-	{
-		if (CONF->coGetVerbose()) LOGGER->Log("Fan not allowed as inside temp (%f) below threshold (%f)",f_it,l_min_inside_temp);
-		return false;
-	}
+    // --- l_min_inside_temp
+    
+    g_min_inside_temp_oldstate = CheckHyst(f_it,l_min_inside_temp,l_min_inside_temp_hyst,g_min_inside_temp_oldstate);
+    if (g_min_inside_temp_oldstate == false)
+    {
+        if (CONF->coGetVerbose()) LOGGER->Log("Fan not allowed as inside temp (%f) below threshold (%f) and hysteresis (%f)",f_it,l_min_inside_temp,l_min_inside_temp_hyst);
+        l_outcome = false;
+    }
 
-	// --- l_min_outside_temp
-	
-	if (f_ot <= l_min_outside_temp)
-	{
-		if (CONF->coGetVerbose()) LOGGER->Log("Fan not allowed as outside temp (%f) below threshold (%f)",f_ot,l_min_outside_temp);
-		return false;
-	}
-
-	// --- l_min_inside_rh
-	
-	if (f_ih <= l_min_inside_rh)
-	{
-		if (CONF->coGetVerbose()) LOGGER->Log("Fan not allowed as inside rH (%f) below threshold (%f)",f_ih,l_min_inside_rh);
-		return false;
-	}
-
+    // --- l_min_outside_temp
+    
+    g_min_outside_temp_oldstate = CheckHyst(f_ot,l_min_outside_temp,l_min_outside_temp_hyst,g_min_outside_temp_oldstate);
+    if (g_min_outside_temp_oldstate == false)
+    {
+        if (CONF->coGetVerbose()) LOGGER->Log("Fan not allowed as outside temp (%f) below threshold (%f) and hysteresis (%f)",f_ot,l_min_outside_temp,l_min_outside_temp_hyst);
+        l_outcome = false;
+    }
+    
+    // --- l_min_inside_rh
+    
+    g_min_inside_rh_oldstate = CheckHyst(f_ih,l_min_inside_rh,l_min_inside_rh_hyst,g_min_inside_rh_oldstate);
+    if (g_min_inside_rh_oldstate == false)
+    {
+        if (CONF->coGetVerbose()) LOGGER->Log("Fan not allowed as inside rH (%f) below threshold (%f) and hysteresis (%f)",f_ih,l_min_inside_rh,l_min_inside_rh_hyst);
+        l_outcome = false;
+    }
+    
 	// --- l_max_daily_fan_runtime
 	
 	if (CONF->isValid("max_daily_fan_runtime"))
@@ -226,7 +267,7 @@ bool IsFanAllowed(float f_it,float f_ih, float f_ot, float f_oh)
 		{
 			if (CONF->coGetVerbose()) LOGGER->Log("Fan not allowed as max runtime (%f) reached: %f",l_max_daily_fan_runtime,FAN->GetRuntime());
             
-			return false;
+            l_outcome = false;
 		}
 	}
 	
@@ -235,12 +276,12 @@ bool IsFanAllowed(float f_it,float f_ih, float f_ot, float f_oh)
 	if (!CheckTimeString())
 	{
 		if (CONF->coGetVerbose()) LOGGER->Log("Fan not allowed as current time is not allowed");
-		return false;
+        l_outcome = false;
 	}
 
 	// --- if the time fits, we are allowed to switch on!
 	
-	return true;
+	return l_outcome;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
